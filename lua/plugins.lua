@@ -42,6 +42,10 @@ require('packer').startup(function(use)
   use { "akinsho/toggleterm.nvim", tag = '*' }
   -- Color theme
   use "ellisonleao/gruvbox.nvim"
+  -- Auto pairs
+  use 'windwp/nvim-autopairs'
+  -- Tab vertical line
+  use "lukas-reineke/indent-blankline.nvim"
 end)
 
 

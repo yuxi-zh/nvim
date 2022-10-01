@@ -72,5 +72,8 @@ module.toggleterm_mapping = function (toggleterm)
   -- open lazygit under the project directory
   vim.keymap.set('n', '<C-g>', toggleterm.toggle_lazygit, opt)
 end
+module.lsp_mapping = function ()
+  vim.keymap.set('n', '<C-f>', function () vim.lsp.buf.format { async = true } end, opt)
+end
 return module
 
