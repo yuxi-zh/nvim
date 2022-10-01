@@ -1,0 +1,8 @@
+require('plugin_config.gruvbox')
+require('plugin_config.nvim_tree')
+require('plugin_config.bufferline')
+require('plugin_config.nvim_cmp')
+require('plugin_config.lsp')
+require('plugin_config.nvim_treesitter')
+require('plugin_config.telescope')
+require('plugin_config.toggleterm')
