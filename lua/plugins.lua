@@ -46,6 +46,13 @@ require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   -- Tab vertical line
   use "lukas-reineke/indent-blankline.nvim"
+  -- Debug adaptor protocol
+  use 'mfussenegger/nvim-dap'
+  -- Docstring generation
+  use {
+    'kkoomen/vim-doge',
+    run = ':call doge#install()'
+  }
 end)
 
 

@@ -75,5 +75,8 @@ end
 module.lsp_mapping = function ()
   vim.keymap.set('n', '<C-f>', function () vim.lsp.buf.format { async = true } end, opt)
 end
+module.doge_mapping = function ()
+  vim.g.doge_mapping = '<A-d>'
+end
 return module
 
