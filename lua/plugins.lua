@@ -10,7 +10,7 @@ require('packer').startup(function(use)
   }
   -- Buffer line
   use 'akinsho/bufferline.nvim'
-  -- Lanaguage server installer 
+  -- Lanaguage server installer
   use 'williamboman/nvim-lsp-installer'
   -- Language server configuration
   use 'neovim/nvim-lspconfig'
@@ -30,10 +30,10 @@ require('packer').startup(function(use)
   -- Fuzzy find
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use 'BurntSushi/ripgrep'
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
@@ -46,13 +46,23 @@ require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   -- Tab vertical line
   use "lukas-reineke/indent-blankline.nvim"
-  -- Debug adaptor protocol
+  -- Debug
   use 'mfussenegger/nvim-dap'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'rcarriga/nvim-dap-ui'
   -- Docstring generation
   use {
     'kkoomen/vim-doge',
     run = ':call doge#install()'
   }
+  -- Toggle comments
+  use 'numToStr/Comment.nvim'
+  -- Spell check
+  use 'lewis6991/spellsitter.nvim'
+  -- Markdown
+  use {
+    "iamcco/markdown-preview.nvim",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+    ft = { "markdown" },
+  }
 end)
-
-
