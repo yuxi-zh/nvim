@@ -73,8 +73,18 @@ module.toggleterm_mapping = function(toggleterm)
   vim.keymap.set('n', '<C-g>', toggleterm.toggle_lazygit, opt)
 end
 module.lsp_mapping = function()
-  vim.keymap.set('n', '<C-f>', function() vim.lsp.buf.format { async = true } end, opt)
-  -- TODO Add mapping for code jump
+  vim.keymap.set('n', 'fmt', function() vim.lsp.buf.format { async = true } end, opt)
+  vim.keymap.set('n', 'rn', function() vim.lsp.buf.rename() end, opt)
+  -- goto
+  vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opt)
+  vim.keymap.set('n', 'gD', function() vim.lsp.buf.declaration() end, opt)
+  vim.keymap.set('n', 'gi', function() vim.lsp.buf.implementation() end, opt)
+  vim.keymap.set('n', 'gr', function() vim.lsp.buf.references() end, opt)
+  vim.keymap.set('n', 'gh', function() vim.lsp.buf.hover() end, opt)
+  -- diagnostics
+  vim.keymap.set('n', 'go', function() vim.diagnostic.open_float() end, opt)
+  vim.keymap.set('n', 'gp', function() vim.diagnostic.goto_prev() end, opt)
+  vim.keymap.set('n', 'gn', function() vim.diagnostic.goto_next() end, opt)
 end
 module.doge_mapping = function()
   vim.g.doge_mapping = '<A-d>'
@@ -114,6 +124,47 @@ module.comment_mapping = function(comment)
       ---Extended mapping; `g>` `g<` `g>[count]{motion}` `g<[count]{motion}`
       extended = false,
     },
+  }
+end
+module.dap_mapping = function(dap)
+  vim.keymap.set('n', '?b', function()
+    dap.toggle_breakpoint()
+  end, opt)
+  vim.keymap.set('n', '?C', function()
+    local conditon = vim.fn.input('Beakpoint condition: ')
+    dap.set_breakpoint(conditon)
+  end, opt)
+  vim.keymap.set('n', '?L', function()
+    local messgae = vim.fn.input('Log point message: ')
+    dap.set_breakpoint(nil, nil, messgae)
+  end, opt)
+  vim.keymap.set('n', '<F1>', function()
+    dap.continue()
+  end, opt)
+  vim.keymap.set('n', '<F2>', function()
+    dap.step_over()
+  end)
+  vim.keymap.set('n', '<F3>', function()
+    dap.step_into()
+  end, opt)
+  vim.keymap.set('n', '<F4>', function()
+    dap.step_out()
+  end, opt)
+  vim.keymap.set('n', '?dr', function()
+    dap.repl.open()
+  end, opt)
+  vim.keymap.set('n', '?dl', function()
+    dap.run_last()
+  end, opt)
+end
+module.dapui_mapping = function()
+  return {
+    expand = { "<CR>", "<2-LeftMouse>" },
+    open = "o",
+    remove = "d",
+    edit = "e",
+    repl = "r",
+    toggle = "t",
   }
 end
 return module

@@ -1,4 +1,4 @@
--- set to 1, nvim will open the preview window after entering the markdown buffer
+--[[ -- set to 1, nvim will open the preview window after entering the markdown buffer
 -- default: 0
 vim.g.mkdp_auto_start = 0
 
@@ -95,4 +95,4 @@ vim.g.mkdp_filetypes = { 'markdown' }
 
 -- set default theme (dark or light)
 -- By default the theme is define according to the preferences of the system
-vim.g.mkdp_theme = 'dark'
+vim.g.mkdp_theme = 'dark' ]]

@@ -11,7 +11,7 @@ local servers = {
   marksman = require('plugin_config.lsp.marksman')
 }
 
-local on_ATtach = function (client, buffer)
+local on_ATtach = function(client, buffer)
   local opts = { noremap = true, silent = true, buffer = buffer }
   vim.keymap.set('n', '<space>gd', vim.lsp.buf.declaration, opts)
   vim.keymap.set('n', '<space>gD', vim.lsp.buf.definition, opts)

@@ -50,6 +50,7 @@ require('packer').startup(function(use)
   use 'mfussenegger/nvim-dap'
   use 'theHamsta/nvim-dap-virtual-text'
   use 'rcarriga/nvim-dap-ui'
+  use 'nvim-telescope/telescope-dap.nvim'
   -- Docstring generation
   use {
     'kkoomen/vim-doge',

@@ -206,6 +206,11 @@ _G.packer_plugins = {
     path = "/home/zhangyuxiang/.local/share/nvim/site/pack/packer/start/spellsitter.nvim",
     url = "https://github.com/lewis6991/spellsitter.nvim"
   },
+  ["telescope-dap.nvim"] = {
+    loaded = true,
+    path = "/home/zhangyuxiang/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
+    url = "https://github.com/nvim-telescope/telescope-dap.nvim"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/home/zhangyuxiang/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
