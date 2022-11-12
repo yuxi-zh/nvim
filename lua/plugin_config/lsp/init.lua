@@ -20,7 +20,7 @@ local on_ATtach = function(client, buffer)
 end
 local flags = { debounce_text_change = 100 }
 local cmp = require('cmp_nvim_lsp')
-local capabilities = cmp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = cmp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- install language server automatically
 for name, module in pairs(servers) do

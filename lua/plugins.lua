@@ -41,6 +41,7 @@ require('packer').startup(function(use)
   -- Terminal
   use { "akinsho/toggleterm.nvim", tag = '*' }
   -- Color theme
+  use "sainnhe/everforest"
   use "ellisonleao/gruvbox.nvim"
   -- Auto pairs
   use 'windwp/nvim-autopairs'

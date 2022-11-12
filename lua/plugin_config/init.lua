@@ -1,4 +1,5 @@
-require('plugin_config.gruvbox')
+-- require('plugin_config.gruvbox')
+require('plugin_config.everforest')
 require('plugin_config.nvim_tree')
 require('plugin_config.bufferline')
 require('plugin_config.nvim_cmp')
